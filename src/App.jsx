@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import ErrorPage from "./components/Pages/ErrorPage/ErrorPage";
 import MasterContainer from "./containers/MasterContainer";
 
@@ -7,7 +7,7 @@ function App() {
   return (
     <Router basename="/">
     <Routes>
-      <Route path="/home" element={<MasterContainer/>}/>
+      <Route path="/" element={<MasterContainer/>}/>
       <Route path="*" element={<ErrorPage />} />
     </Routes>
   </Router>
