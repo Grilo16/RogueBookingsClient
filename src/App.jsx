@@ -7,7 +7,7 @@ function App() {
   return (
     <Router basename="/">
     <Routes>
-      <Route path="/" element={<MasterContainer/>}/>
+      <Route path="/home" element={<MasterContainer/>}/>
       <Route path="*" element={<ErrorPage />} />
     </Routes>
   </Router>
