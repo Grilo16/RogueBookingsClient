@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/RogueBookingsClient/static/css/main.35a588a4.css",
-    "main.js": "/RogueBookingsClient/static/js/main.9df4fe76.js",
+    "main.js": "/RogueBookingsClient/static/js/main.234a0273.js",
     "static/media/actualArt.png": "/RogueBookingsClient/static/media/actualArt.28b7facba008bb4ef5ba.png",
     "static/media/placeholderArt.png": "/RogueBookingsClient/static/media/placeholderArt.13b16bf6f4804cc57838.png",
     "static/media/404duck.gif": "/RogueBookingsClient/static/media/404duck.76b0929fd984be264d6e.gif",
@@ -9,10 +9,10 @@
     "static/media/logo.svg": "/RogueBookingsClient/static/media/logo.eb03f62b8e2dc3cf969055da49457298.svg",
     "index.html": "/RogueBookingsClient/index.html",
     "main.35a588a4.css.map": "/RogueBookingsClient/static/css/main.35a588a4.css.map",
-    "main.9df4fe76.js.map": "/RogueBookingsClient/static/js/main.9df4fe76.js.map"
+    "main.234a0273.js.map": "/RogueBookingsClient/static/js/main.234a0273.js.map"
   },
   "entrypoints": [
     "static/css/main.35a588a4.css",
-    "static/js/main.9df4fe76.js"
+    "static/js/main.234a0273.js"
   ]
 }
