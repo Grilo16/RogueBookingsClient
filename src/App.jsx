@@ -5,7 +5,7 @@ import MasterContainer from "./containers/MasterContainer";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/">
     <Routes>
       <Route path="/" element={<MasterContainer/>}/>
       <Route path="*" element={<ErrorPage />} />
