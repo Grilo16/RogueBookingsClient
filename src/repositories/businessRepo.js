@@ -1,4 +1,4 @@
-const businessURL = "http://localhost:8080/businesses/"
+const businessURL = "https://spring-rogue-bookings-server.herokuapp.com/businesses/"
 
 const businessRepo = {
 

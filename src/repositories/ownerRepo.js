@@ -1,4 +1,4 @@
-const ownerURL = "http://localhost:8080/owners/"
+const ownerURL = "https://spring-rogue-bookings-server.herokuapp.com/owners/"
 
 const ownerRepo = {
 

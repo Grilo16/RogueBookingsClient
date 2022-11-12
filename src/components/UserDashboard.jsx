@@ -72,97 +72,12 @@ function UserDashboard() {
       Password: "⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤"
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  const someObject = {a: 1, b: <div>hello</div>, c: <ButtonComponent activated={true} label={"it takes anything"}/>}
-
-  const someList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(()=>{
-    return someObject
-  })
-
-
-
-
-
   return ( 
 
     <ContentDiv className="scroll-within">
 
 
-
-<TableComponent tableData={someObject}/>
-<TableComponent tableData={someList}/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <PageTitle>Welcome, {state.user.firstName}!</PageTitle>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -176,39 +91,7 @@ function UserDashboard() {
  
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-
-
-
-      {/* <UserBusinesses/> */}
+      <UserBusinesses/>
    
    
    

@@ -1,4 +1,4 @@
-const userURL = "http://localhost:8080/users/"
+const userURL = "https://spring-rogue-bookings-server.herokuapp.com/users/"
 
 const userRepo = {
 

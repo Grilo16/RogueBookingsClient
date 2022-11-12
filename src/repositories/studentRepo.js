@@ -1,4 +1,4 @@
-const studentURL = "http://localhost:8080/students/"
+const studentURL = "https://spring-rogue-bookings-server.herokuapp.com/students/"
 
 const studentRepo = {
 

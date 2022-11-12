@@ -1,4 +1,4 @@
-const memberURL = "http://localhost:8080/members/"
+const memberURL = "https://spring-rogue-bookings-server.herokuapp.com/members/"
 
 const memberRepo = {
 
