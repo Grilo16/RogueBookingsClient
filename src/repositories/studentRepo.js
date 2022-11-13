@@ -1,4 +1,6 @@
-const studentURL = "https://spring-rogue-bookings-server.herokuapp.com/students/"
+import { baseURl } from "./repoUrl"
+
+const studentURL = `${baseURl}/students/`
 
 const studentRepo = {
 

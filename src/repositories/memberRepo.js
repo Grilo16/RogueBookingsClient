@@ -1,5 +1,6 @@
-const memberURL = "https://spring-rogue-bookings-server.herokuapp.com/members/"
+import { baseURl } from "./repoUrl"
 
+const memberURL = `${baseURl}/members/`
 const memberRepo = {
 
     async getAllMembers(){

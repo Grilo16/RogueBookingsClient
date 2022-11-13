@@ -17,13 +17,28 @@ const MasterContainer = () => {
 
   const [state, dispatch] = useReducer(reducer, masterState);
 
+useEffect(()=>{
+  if(JSON.parse(localStorage.getItem("user"))){
 
+    const userId = JSON.parse(localStorage.getItem("user")).userId 
+    ?userRepo.getUserById(JSON.parse(localStorage.getItem("user")).userId).then((user)=>{
+      if (!user){
+        return window.alert("Sorry email or password incorrect")
+      }
+      dispatch({type: "LoadLoggedInUser", user})
+    })
+    :null
+  }
+    
+},[])
  
 
-  
+  // !state.user.email 
   return (
     <MasterContext.Provider value={{ state, dispatch }}>
-      {!state.user.email 
+ 
+        {!state.user.email 
+      
         ? <LogInCreateAccountPage />
         : <DefaultPage>
         {

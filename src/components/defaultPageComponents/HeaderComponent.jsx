@@ -1,6 +1,8 @@
+import { Navigate } from "react-router-dom";
 import styled from "styled-components";
 import {ReactComponent as Logo} from "../../images/logo.svg"
-
+import localStorageRepo from "../../repositories/localStorageRepo";
+import {Link} from "react-router-dom"
 const HeaderDiv = styled.div`
 display: flex;
 position: relative;
@@ -38,6 +40,12 @@ margin-left: 0.5vw;
 `
 
 const HeaderComponent = () => {
+
+    const logout = () => {
+        localStorageRepo.logOut().then(()=>{
+            
+        })
+    }
     return (
         
         
@@ -48,7 +56,7 @@ const HeaderComponent = () => {
 <HeaderTitle>Rogue Bookings</HeaderTitle>
 </LogoDiv>
 
-<StyledLogOut href="/">Log out</StyledLogOut>
+<StyledLogOut onClick={()=>{localStorageRepo.logOut()}} href="/">Log out</StyledLogOut>
 </HeaderDiv>
     
         )
