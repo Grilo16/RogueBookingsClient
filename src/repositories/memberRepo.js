@@ -25,7 +25,7 @@ const memberRepo = {
             method: "PUT",
             headers: { "Content-Type": "application/json" }
         })
-        return response.json()
+        return response
     },
 }
 
