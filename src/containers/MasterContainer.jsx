@@ -1,91 +1,81 @@
 import { createContext, useEffect, useReducer } from "react";
-import userRepo from "../repositories/userRepo"
-import GuestPageContainer from "./GuestPageContainer";
-import UserPageContainer from "./UserPageContainer";
+import styled from "styled-components";
+import UserHomePage from "../pages/UserHomePage";
+import LogInCreateAccountPage from "../pages/guestPages/LogInCreateAccountPage";
+import userRepo from "../repositories/userRepo";
+import reducer from "./MasterReducer";
+import masterState from "./MasterState";
+import DefaultPage from "../components/defaultPageComponents/DefaultPage";
+import BusinessRoutingPage from "../pages/businessPages/BusinessRoutingPage";
+import CreateBusinessPage from "../pages/businessPages/SubPages/createJoin/CreateBusinessPage";
+import JoinBusinessPage from "../pages/businessPages/SubPages/createJoin/JoinBusinessPage";
+import ErrorPage from "../pages/ErrorPage";
 
-export const MasterContext = createContext(null)
-
-const reducer = (state, action) => {
-    switch(action.type){
-
-        case "LoadAllUsers": 
-            return {...state, AllUsers: [...action.users]}
-
-        case "LoadLoggedInUser":
-            return {...state, user: {...action.user}}
-
-        case "LoadMyBusinesses":
-            return {...state, myBusinesses:[...action.businesses] }
-
-        case "LoadMyMemberships":
-            return {...state, myMemberships:[...action.memberships] }
-
-        case "LoadMyStudyLessons":
-            return {...state, myStudyLessons: [...action.studyLessons]}
-
-        case "SelectNavTab": 
-            return {...state, selectedNavTab: action.selectedNavTab}
-
-        case "SetNavTabType": 
-            return {...state, selectedTabType: action.tabType }
-        
-        case "SetSelectedBusiness": 
-            return {...state, selectedBusiness: action.business}
-        
-        case "SetSelectedBusinessMembership": 
-            return {...state, selectedBusinessMembership: action.membershipId}
-
-
-        case "SetPageColor":
-            return {...state, pageColor: action.color}
-
-        default:
-            return state
-    }
-};
+export const MasterContext = createContext(null);
 
 const MasterContainer = () => {
 
-    const initialState = {
-        AllUsers : [],
-        selectedNavTab: 0,
-        selectedTabType: "dashboard", 
-        pageColor: "#4a499e",
-        selectedBusiness: {id: null, name: null, balance: null ,members:[], lessons:[], owners:[]},
-        selectedBusinessMembership : {id: null, business:{}, user:{}},
-        user: {
-            id: null,
-            firstName: null,
-            lastName: null,
-            email: null,
-            userLayout: {backgroundColor: "#ffffff"}
-            },
-        myBusinesses: [],
-        myMemberships: [], 
-        myStudyLessons: [], 
-     
+  const [state, dispatch] = useReducer(reducer, masterState);
+
+
+ 
+
+  
+  return (
+    <MasterContext.Provider value={{ state, dispatch }}>
+      {!state.user.email 
+        ? <LogInCreateAccountPage />
+        : <DefaultPage>
+        {
+          state.selectedTabType ==="dashboard"  
+         ? <UserHomePage/>
+         :  state.selectedTabType === "business_owner" || state.selectedTabType  === "business_member"
+         ? <BusinessRoutingPage/>
+         :  state.selectedTabType === "create-business" 
+         ? <CreateBusinessPage/>
+         : state.selectedTabType === "join-business"
+         ? <JoinBusinessPage/>
+         : <ErrorPage/>
         }
 
-        
-        
-        const [state, dispatch] = useReducer(reducer, initialState)
-        
-        
-        useEffect(()=>{
-            userRepo.getAllUsers().then((users)=>{dispatch({type: "LoadAllUsers", users})})
-            
-        },[])
-        
+          
+        </DefaultPage>
 
-    return (
-        <MasterContext.Provider value={{state, dispatch}} >
-        {state.user.email
-        ?<UserPageContainer/>
-        :<GuestPageContainer/>
+
+         
+        //  </DefaultPage>
+      }
+      
+{/* 
+      {!state.user.email 
+      : state.selectedTabType ==="dashboard"  
+      ? <UserHomePage/>
+      : state.selectedTabType === "business" 
+      ? <Maybe/> 
+      : <UserHomePage/>
+    } */}
+      {
+        // ? 
+        // : state.selectedTabType === "business"
+        // ? <BusinessDisplayPage/>
+        // : state.selectedTabType === "join-business"
+        // ? <BusinessBrowser/>
+        // : state.selectedTabType === "create-business"
+        // ?<CreateBusinessPage/>
+        // :null
         }
-        </MasterContext.Provider>
-    )
 
+    </MasterContext.Provider>
+  );
 };
+
+export const ContentDiv = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+margin-top: ${(props)=>props.marginTop? props.marginTop : "0%"};
+
+`
 
 export default MasterContainer;
