@@ -6,7 +6,7 @@ import UserHomePage from "./pages/UserHomePage";
 
 function App() {
   return (
-    <Router basename="RogueRogueBookingsClient">
+    <Router basename="/">
     <Routes>
       <Route path="/" element={<MasterContainer/>}/>
       <Route path="*" element={<ErrorPage />} />
