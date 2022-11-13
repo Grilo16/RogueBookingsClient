@@ -31,7 +31,7 @@ const businessRepo = {
             method: "DELETE",
             headers: { "Content-Type": "application/json" }
         })
-        return response.json()
+        return response
     },
     
     async editBusinessById(patchObject, businessId){
