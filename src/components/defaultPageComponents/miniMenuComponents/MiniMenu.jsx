@@ -29,9 +29,12 @@ const MiniMenu = () => {
 
   const handleLeaveBusiness = () => {
     memberRepo.removeMemberFromBusinessByMembersId(state.memberId);
-    dispatch({ type: "SetNavTabType", tabType: "dashboard" });
-    dispatch({ type: "SelectNavTab", selectedNavTab: 0 });
-    dispatch({ type: "SetPageColor", color: "#4a499e" });
+    setTimeout(()=>{
+      dispatch({ type: "SetNavTabType", tabType: "dashboard" });
+      dispatch({ type: "SelectNavTab", selectedNavTab: 0 });
+      dispatch({ type: "SetPageColor", color: "#4a499e" });
+
+    }, 500)
   };
 
   const handleCloseBusiness = () => {
