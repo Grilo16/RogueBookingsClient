@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import MasterContainer from "./containers/MasterContainer";
 import ErrorPage from "./pages/ErrorPage";
 import UserHomePage from "./pages/UserHomePage";
@@ -6,10 +6,9 @@ import UserHomePage from "./pages/UserHomePage";
 
 function App() {
   return (
-    <Router>
+    <Router basename="RogueRogueBookingsClient">
     <Routes>
       <Route path="/" element={<MasterContainer/>}/>
-      <Route path="/home" element={<UserHomePage/>}/>
       <Route path="*" element={<ErrorPage />} />
     </Routes>
   </Router>
