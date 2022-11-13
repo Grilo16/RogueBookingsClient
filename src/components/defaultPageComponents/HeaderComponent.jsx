@@ -56,7 +56,7 @@ const HeaderComponent = () => {
 <HeaderTitle>Rogue Bookings</HeaderTitle>
 </LogoDiv>
 
-<StyledLogOut onClick={()=>{localStorageRepo.logOut()}} href="/">Log out</StyledLogOut>
+<StyledLogOut onClick={()=>{localStorageRepo.logOut()}} href="/RogueBookingsClient/">Log out</StyledLogOut>
 </HeaderDiv>
     
         )
