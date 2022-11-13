@@ -33,15 +33,17 @@ const MiniMenu = () => {
       dispatch({ type: "SetNavTabType", tabType: "dashboard" });
       dispatch({ type: "SelectNavTab", selectedNavTab: 0 });
       dispatch({ type: "SetPageColor", color: "#4a499e" });
-
-    }, 500)
+      
+    }, 100)
   };
-
+  
   const handleCloseBusiness = () => {
     businessRepo.deleteBusinessById(state.selectedBusiness.id);
-    dispatch({ type: "SetNavTabType", tabType: "dashboard" });
-    dispatch({ type: "SelectNavTab", selectedNavTab: 0 });
-    dispatch({ type: "SetPageColor", color: "#4a499e" });
+    setTimeout(()=>{
+      dispatch({ type: "SetNavTabType", tabType: "dashboard" });
+      dispatch({ type: "SelectNavTab", selectedNavTab: 0 });
+      dispatch({ type: "SetPageColor", color: "#4a499e" });
+    }, 100)
   };
 
   return (
