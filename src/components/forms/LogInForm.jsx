@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import styled from "styled-components";
-import ButtonComponent from "../../components/formComponents/ButtonComponent";
-import InputFieldComponent from "../../components/formComponents/InputFieldComponent";
+import ButtonComponent from "../formComponents/ButtonComponent";
+import InputFieldComponent from "../formComponents/InputFieldComponent";
 import { MasterContext } from "../../containers/MasterContainer";
 import businessRepo from "../../repositories/businessRepo";
 import localStorageRepo from "../../repositories/localStorageRepo";

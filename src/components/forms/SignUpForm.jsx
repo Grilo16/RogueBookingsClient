@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
-import ButtonComponent from "../../components/formComponents/ButtonComponent";
-import InputFieldComponent from "../../components/formComponents/InputFieldComponent";
+import ButtonComponent from "../formComponents/ButtonComponent";
+import InputFieldComponent from "../formComponents/InputFieldComponent";
 import { MasterContext } from "../../containers/MasterContainer";
 import userRepo from "../../repositories/userRepo";
 import { ButtonsDiv } from "./LogInForm";

@@ -14,7 +14,7 @@ const DefaultPage = (props) => {
   // header = true;
   //   header = false;
   // navBar = true;
-  //   navBar = false;
+    // props.navBar = false;
   // miniMenu = true;
   //   miniMenu = false;
 
@@ -30,6 +30,8 @@ const DefaultPage = (props) => {
             state.selectedPage === "Teachers" ||
             state.selectedPage === "Students" ||
             state.selectedPage === "Revenue" ||
+            state.selectedPage === "Members" ||
+            state.selectedPage === "Sessions" ||
             state.selectedPage === "Settings") &&
           (state.selectedTabType === "business_owner" ||
            state.selectedTabType === "business_member")? (

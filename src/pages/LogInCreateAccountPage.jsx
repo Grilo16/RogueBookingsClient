@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
 import styled from "styled-components";
-import SignUpForm from "./SignUpForm";
-import LogInForm from "./LogInForm";
-import logo from "../../images/Logo.png";
-import actualArt from "../../images/actualArt.png";
-import { MasterContext } from "../../containers/MasterContainer";
+import SignUpForm from "../components/forms/SignUpForm";
+import LogInForm from "../components/forms/LogInForm";
+import logo from "../images/Logo.png";
+import actualArt from "../images/actualArt.png";
+import { MasterContext } from "../containers/MasterContainer";
 
 const LogInCreateAccountPage = () => {
   const { state, dispatch } = useContext(MasterContext);

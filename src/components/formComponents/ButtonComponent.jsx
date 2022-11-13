@@ -55,13 +55,13 @@ const ButtonComponent = ({
   paddingtop,
   paddingBottom,
   marginRight,
-  selectedId,
+  target,
   borderRadius,
   param,
 }) => {
   const handleClick = (e) => {
     e.preventDefault();
-    clickFunction(selectedId);
+    clickFunction(target);
   };
 
 
@@ -88,7 +88,7 @@ const ButtonComponent = ({
       paddingtop={paddingtop}
       paddingBottom={paddingBottom}
       marginRight={marginRight}
-      selectedId={selectedId}
+      target={target}
       borderRadius={borderRadius}
     >
       <StyledLabel>{label}</StyledLabel>

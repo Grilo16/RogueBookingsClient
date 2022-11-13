@@ -13,6 +13,8 @@ const MiniMenu = () => {
 
   const ownerMenu = [
     "Schedule",
+    "Sessions",
+    "Members",
     "Teachers",
     "Students",
     "Revenue",
@@ -29,21 +31,20 @@ const MiniMenu = () => {
 
   const handleLeaveBusiness = () => {
     memberRepo.removeMemberFromBusinessByMembersId(state.memberId);
-    setTimeout(()=>{
+    setTimeout(() => {
       dispatch({ type: "SetNavTabType", tabType: "dashboard" });
       dispatch({ type: "SelectNavTab", selectedNavTab: 0 });
       dispatch({ type: "SetPageColor", color: "#4a499e" });
-      
-    }, 100)
+    }, 100);
   };
-  
+
   const handleCloseBusiness = () => {
     businessRepo.deleteBusinessById(state.selectedBusiness.id);
-    setTimeout(()=>{
+    setTimeout(() => {
       dispatch({ type: "SetNavTabType", tabType: "dashboard" });
       dispatch({ type: "SelectNavTab", selectedNavTab: 0 });
       dispatch({ type: "SetPageColor", color: "#4a499e" });
-    }, 100)
+    }, 100);
   };
 
   return (

@@ -1,7 +1,7 @@
 import { createContext, useEffect, useReducer } from "react";
 import styled from "styled-components";
 import UserHomePage from "../pages/UserHomePage";
-import LogInCreateAccountPage from "../pages/guestPages/LogInCreateAccountPage";
+import LogInCreateAccountPage from "../pages/LogInCreateAccountPage";
 import userRepo from "../repositories/userRepo";
 import reducer from "./MasterReducer";
 import masterState from "./MasterState";

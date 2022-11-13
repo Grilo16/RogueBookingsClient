@@ -67,7 +67,7 @@ const JoinBusinessPage = () =>{
           ),
           joinButton: (
               <ButtonComponent
-              selectedId={business.id}
+              target={business.id}
               activated={true}
               label={"Join"}
               height={"1.5vw"}

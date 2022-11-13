@@ -9,6 +9,8 @@ import SchedulePage from "./SubPages/miniMenuTabs/SchedulePage";
 import SettingsPage from "./SubPages/miniMenuTabs/SettingsPage";
 import StudentsPage from "./SubPages/miniMenuTabs/StudentsPage";
 import TeachersPage from "./SubPages/miniMenuTabs/TeachersPage";
+import MembersPage from "./SubPages/miniMenuTabs/MembersPage";
+import SessionsPage from "./SubPages/miniMenuTabs/SessionsPage";
 
 const BusinessRoutingPage = () => {
 
@@ -27,6 +29,10 @@ const BusinessRoutingPage = () => {
                 ?<RevenuePage/>
                 : state.selectedPage === "Settings"
                 ? <SettingsPage/>
+                : state.selectedPage === "Members"
+                ? <MembersPage/>
+                : state.selectedPage === "Sessions"
+                ? <SessionsPage/>
                 :<ErrorPage/>
             }
         </>
